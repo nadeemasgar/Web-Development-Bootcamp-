@@ -1,0 +1,146 @@
+body {
+    
+}
+
+#title {
+    background-color: #ff4c68;
+}
+
+h1 {
+    font-size: 3.2rem;
+    line-height: 1.5;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container-fluid {
+   padding: 3% 15% 7%; 
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px
+}
+
+.nav-item {
+    margin-left: 3rem;
+}
+
+.navbar {
+    margin-bottom: 3rem;
+    padding: 0rem;
+}
+
+.imgRotate {
+    width: 50%;
+    transform: rotate(25deg);
+    position: absolute;
+    right:30%
+}
+
+#features {
+    padding: 5rem 3rem 10rem 0rem;    
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.featureimg {
+    text-align: center;
+    color: #ef8172;
+    width: 100%;
+    font-size:3rem;
+    margin: 1.5rem 0rem 1.5rem 0rem;
+}
+
+.featureimg:hover {
+    color: #ff4c68;
+}
+
+.text {
+    font-family: 'Montserrat-light', sans-serif;
+    width: 14rem;
+    margin: auto;
+    color: silver;
+}
+
+#testimonials {
+    text-align: center;
+    background-color: #ef8172 ;
+    color: #fff;
+}
+
+h2 {
+    font-family: "Montserrat";
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+.testinomial-image {
+    width: 10%;
+    border-radius: 100%;
+    margin: 20px;
+}
+
+#press {
+    background-color: #ef8172 ;
+    text-align: center;
+    padding-bottom: 3%;
+    width: 
+}
+
+.pressImg {
+    width: 15%;
+    margin: 20px 20px 50px ;
+}
+
+.carousel-item {
+    padding: 7% 15%; 
+}
+
+#pricing {
+    padding:100px;
+    text-align: center;
+}
+
+.pricing-column {
+    padding: 3% 2%;
+}
+
+#cta {
+    height: 25rem; 
+    background-color: #ff4c68;
+    text-align: center;
+    padding: 4% 25%;
+    color: #fff;
+}
+
+.ctaText {
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 4%;
+    line-height: 1.5;
+    font-size: 3rem;
+}
+
+#footer {
+    height: 10rem;
+    text-align: center;
+}
+
+.footerImg {
+    padding: 5% 0.5% 1%;
+}
+
+@media (max-width: 1028px) {
+
+    #title {
+        text-align: center;
+    }
+
+    .imgRotate {
+        position: static;
+        transform: rotate(0);
+    }
+}

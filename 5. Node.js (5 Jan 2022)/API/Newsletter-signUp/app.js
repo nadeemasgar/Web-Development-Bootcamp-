@@ -1,0 +1,59 @@
+const express = require("express");
+const https = require("https");
+const request = require("request");
+const bodyParser = require("body-parser");
+const { Http2ServerResponse } = require("http2");
+const { response } = require("express");
+
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static("public"));
+
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/signup.html");
+});
+app.post("/", function (req, res) {
+  const firstname = req.body.firstname;
+  const lastname = req.body.lastname;
+  const email = req.body.email;
+
+  const data = {
+    members: [
+      {
+        email_address: email,
+        status: "subscibed",
+        merge_fields: {
+          FNAME: firstname,
+          LNAME: lastname,
+        },
+      },
+    ],
+  };
+
+  const jsonData = JSON.stringify(data);
+
+  const url = "https://us20.api.mailchimp.com/3.0/lists/c72da071b9/members";
+
+  const options = {
+    method: "POST",
+    auth: "nadeem:61c753130edaed7138ac71a19ed3befd-us20",
+  };
+
+  const request = https.request(url, options, function (response) {
+    response.on("data", function (data) {
+      console.log(JSON.parse(data));
+    });
+  });
+
+  request.write(jsonData);
+  request.end();
+});
+
+app.listen(4000, function () {
+  console.log("Listnening on 4000");
+});
+
+// 61c753130edaed7138ac71a19ed3befd-us20
+
+// c72da071b9
