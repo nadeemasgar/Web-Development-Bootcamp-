@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+
+    <style>
+
+        .container {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas: 
+            'navbar navbar navbar navbar'
+            'section section section aside'
+            'footer footer footer footer';
+        }
+
+        .item {
+            background-color: yellow;
+            border: 3px solid black;
+        }
+
+        #navbar {
+            grid-area: navbar;
+        }
+
+        #section {
+            grid-area: section;
+        }
+
+        #aside {
+            grid-area: aside;
+        }
+
+        #footer {
+            grid-area: footer;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <div id="navbar" class="item">
+            Home About Contact Login
+        </div>
+        <div id="section" class="item">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel quo enim eius voluptas distinctio repellendus nam sequi quis sint provident! Ipsam laudantium dolore, distinctio consequatur soluta molestias officia sequi facilis.
+            Tenetur, eos? Error nostrum labore, ut veritatis, libero quis corrupti fuga assumenda sint impedit, voluptas tempora in. Excepturi facere nulla eius cumque labore, consectetur vitae ipsum sunt ex impedit voluptate.
+            Qui iste eos mollitia. Quibusdam odit quia vero consequatur officia obcaecati aspernatur! Facere voluptatem temporibus quis voluptate laboriosam soluta molestiae ab deserunt veniam ipsa, beatae illum placeat tempora reprehenderit officia.
+            Eaque voluptatem amet architecto aperiam veniam harum adipisci cumque repudiandae est quaerat dignissimos tempore laborum deserunt sint cupiditate excepturi officiis voluptatibus quos culpa minima ratione, corporis ut sunt quas? Impedit?
+            Ad modi animi quae delectus tenetur quisquam incidunt omnis similique cupiditate officiis eum quasi quos rerum, dolor quaerat reiciendis culpa neque deserunt placeat, voluptates sequi? Magnam quae aliquam perferendis qui?
+            Illo cum fugit non delectus et animi labore dolores perspiciatis necessitatibus omnis, incidunt quaerat quam porro a vero dicta quis ipsum excepturi atque quod nisi repellendus laudantium autem quidem. Asperiores!
+            Ab, alias ipsum? Esse nesciunt ut ipsam suscipit quaerat deserunt tempore qui dicta veniam quam autem dignissimos nam eum, pariatur ab earum aliquid culpa temporibus unde voluptate vel neque veritatis!
+            Dolores autem culpa praesentium totam, vitae earum nesciunt accusantium consectetur voluptates itaque ex excepturi corrupti quasi fugit distinctio omnis dolorum voluptas saepe. Laboriosam illo tempora numquam! Nam placeat hic at!
+            Doloremque neque perferendis quidem laboriosam impedit maxime magni tenetur. Esse distinctio, velit impedit quis, veritatis doloribus ab, ipsa est similique placeat inventore. Laborum nisi aliquid dolorem nostrum numquam, provident iusto!
+            Atque ab sunt quia libero, amet doloremque saepe numquam, nesciunt vitae incidunt et sint eos illum laboriosam quae, eveniet animi maxime dolores vero hic cumque reiciendis ipsam cupiditate. Est, ex.
+        </div>
+        <div id="aside" class="item">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium iusto mollitia sint velit labore repellendus illo praesentium autem neque, nam quis quam amet vero possimus reprehenderit. Dolor minus obcaecati error?
+            Consequuntur iste doloremque error voluptas obcaecati quos architecto odit sit impedit vitae atque ea veritatis asperiores illo inventore ullam, fugit cupiditate nisi corrupti quibusdam mollitia accusantium? Accusantium praesentium inventore nulla!
+            Cumque, dicta soluta? Accusamus, laboriosam aliquam ab temporibus soluta vero nemo blanditiis consequatur quas animi debitis? Odit nulla, qui molestiae est facilis autem. Molestias atque ut rem quidem, quos qui.
+            Debitis in illo reiciendis animi est quae unde dicta nostrum minus, culpa aut consequatur aspernatur, tempore nihil reprehenderit nisi doloremque commodi accusamus laboriosam cupiditate. Sed eius voluptatibus odio harum amet?
+            Similique suscipit expedita eaque magni! Aperiam perspiciatis reiciendis libero non? Cum officiis exercitationem impedit libero harum quod molestiae, sapiente ex ipsa aliquam, velit, labore eos. Nostrum necessitatibus beatae repellat earum.
+            Nulla culpa hic soluta quia fugiat, porro perferendis consequuntur, sit minima, quo facere debitis nesciunt minus commodi repellendus doloremque eveniet saepe placeat. Suscipit fugiat aperiam in nesciunt recusandae aliquid pariatur.
+            Modi optio quae doloremque saepe cupiditate consequatur! Explicabo dicta maxime odio itaque! Necessitatibus vitae culpa quod velit odit officia consequuntur explicabo libero sunt, nesciunt quidem aliquid sint, dolores nihil tenetur.
+            Facilis ab quidem explicabo assumenda quaerat deserunt voluptas iure, sed quae totam. Ab culpa deleniti iste porro dignissimos quidem repellendus, harum earum voluptatem qui exercitationem doloribus hic facere, esse cum?
+            Provident consectetur similique officiis tempore vitae? Qui, quo fugiat maiores sunt animi exercitationem, cum vero aperiam dolores repellendus dolorum doloremque in numquam quasi ducimus porro. Animi exercitationem sint veritatis architecto?
+            Libero ducimus adipisci atque consequuntur minus nostrum tempora maiores molestiae consectetur possimus, soluta ex sit non quasi quia nulla perferendis cumque saepe minima accusamus natus doloremque pariatur? Saepe, voluptatibus temporibus.
+        </div>
+        <div id="footer" class="item">
+            FaceBook Linkedin Youtube
+        </div>
+
+        <!-- <div class="item">This is item-1</div>
+        <div class="item">This is item-2</div>
+        <div class="item">This is item-3</div>
+        <div class="item">This is item-4</div>
+        <div class="item">This is item-5</div>
+        <div class="item">This is item-6</div>
+        <div class="item">This is item-7</div>
+        <div class="item">This is item-8</div>
+        <div class="item">This is item-9</div>
+        <div class="item">This is item-10</div>
+        <div class="item">This is item-11</div>
+        <div class="item">This is item-12</div>
+        <div class="item">This is item-13</div>
+        <div class="item">This is item-14</div>
+        <div class="item">This is item-15</div> -->
+
+    </div>
+
+</body>
+</html>
