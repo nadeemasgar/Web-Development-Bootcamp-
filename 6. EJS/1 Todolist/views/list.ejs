@@ -5,21 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo List</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1> <%= kindOfDay %> </h1>
+    <div class="box" id="heading">
+      <h1><%= kindOfDay %></h1>
+    </div>
 
-    <ul>
-        <% for(let val of newListItem) { %>
-            <li> <%= val %> </li>
-        <% } %>
-    </ul>
-    
-    <form action="/" method="post"> <!-- / is Home Route or Root Route  -->
-        <input type="text" name="newItem">
-        <button type="submit" name="button">ADD</button>
-    </form>
+    <div class="box">
+      <% for(let val of newListItem) { %>
+      <div class="item">
+        <input type="checkbox" />
+        <p><%= val %></p>
+      </div>
+      <% } %>
 
+      <form class="item" action="/" method="post">
+        <!-- / is Home Route or Root Route  -->
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off"/>
+        <button type="submit" name="button">+</button>
+      </form>
+    </div>
   </body>
 </html>
