@@ -12,16 +12,12 @@ app.set("view engine", "ejs"); // To tell browser that we are using ejs
 app.get("/", (req, res) => {
 
     var today = new Date();
-    var currentDay = today.getDate();
+    var currentDay = today.getDay();
     var day = "";
 
-    if(currentDay === 6 || currentDay === 0) {
-        day = "Weekend";
-    }
-    else {
-        day = "Weekday";
-    }
-
+    const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday"];
+    day = week[currentDay];
+    console.log(currentDay, week, day);
     res.render("list", {kindOfDay : day});
 });
 
