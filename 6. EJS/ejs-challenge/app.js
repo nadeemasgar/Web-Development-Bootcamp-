@@ -15,10 +15,22 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-app.get("/", function(req, res) {
+/* app.get() is used to render pages as user is trying to get the pages  */
+app.get("/", function(req, res) { 
 
   res.render("home", {startContent : homeStartingContent}); // res.render() is given by express.. to render the element
 });
+
+app.get("/about", function(req, res) {
+  
+  res.render("about", {aboutData : aboutContent});
+});
+
+app.get("/contact", function(req, res) {
+
+  res.render("contact", {contactData : contactContent});
+});
+
 
 
 
