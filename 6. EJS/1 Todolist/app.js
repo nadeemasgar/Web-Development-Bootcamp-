@@ -5,8 +5,9 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.get("/", (req, res) => {  
-  res.send("Hello");  // response from server to browser ... help to perform logic and send back to browser
+app.get("/", (req, res) => {
+  //   res.send("Hello");  // response from server to browser ... help to perform logic and send back to browser
+  res.send("<h1> Hello.. today is Monday </h1>"); // sending HTML to browser
 });
 
 app.listen(3000, function () {
