@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
     var day = today.toLocaleDateString("en-US", options);
 
     res.render("list", {kindOfDay : day, newListItem : items});
+
 });
 
 /* Using post request, we pass data back from our webpage to our server */

@@ -13,7 +13,9 @@
         <li>Buy Food</li>
         <li>Cook Food</li>
         <li>Eat Food</li>
-        <li> <%= newListItem %> </li>
+        <% for(let val of newListItem) { %>
+            <li> <%= val %> </li>
+        <% } %>
     </ul>
     
     <form action="/" method="post"> <!-- / is Home Route or Root Route  -->
