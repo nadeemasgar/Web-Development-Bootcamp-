@@ -21,14 +21,14 @@ app.get("/", (req, res) => {
 
     var day = today.toLocaleDateString("en-US", options);
 
-    res.render("list", {kindOfDay : day});
+    res.render("list", {kindOfDay : day, newListItem : item});
 });
 
 /* Using post request, we pass data back from our webpage to our server */
 app.post("/", (req, res) => {  /* Handles post requet to the home route */
     var item = req.body.newItem;
     
-    res.render("list", {newListItem : item});
+    res.redirect("/");
 })
 
 app.listen(3000, function () {
