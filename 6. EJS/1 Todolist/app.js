@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-var item = "";
+var items = [];
 
 app.set("view engine", "ejs"); // To tell browser that we are using ejs
 
@@ -23,13 +23,13 @@ app.get("/", (req, res) => {
 
     var day = today.toLocaleDateString("en-US", options);
 
-    res.render("list", {kindOfDay : day, newListItem : item});
+    res.render("list", {kindOfDay : day, newListItem : items});
 });
 
 /* Using post request, we pass data back from our webpage to our server */
 app.post("/", (req, res) => {  /* Handles post requet to the home route */
-    item = req.body.newItem;
-    
+    var item = req.body.newItem;
+    items.push(item);
     res.redirect("/");
 })
 
