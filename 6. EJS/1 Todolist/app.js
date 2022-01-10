@@ -27,8 +27,8 @@ app.get("/", (req, res) => {
 /* Using post request, we pass data back from our webpage to our server */
 app.post("/", (req, res) => {  /* Handles post requet to the home route */
     var item = req.body.newItem;
-    console.log(item);
-    // res.send(item);
+    
+    res.render("list", {newListItem : item});
 })
 
 app.listen(3000, function () {
