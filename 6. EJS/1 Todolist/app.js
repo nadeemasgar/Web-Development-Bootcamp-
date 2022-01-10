@@ -6,9 +6,9 @@ const date = require(__dirname + "/date.js");
 
 const app = express();
 
-let items = ["Buy Food", "Cook Food", "Eat Food"];
+const items = ["Buy Food", "Cook Food", "Eat Food"];
 
-let workItems = [];
+const workItems = [];
 
 app.set("view engine", "ejs"); // To tell browser that we are using ejs
 
@@ -18,7 +18,7 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => {
 
-    let day = date.getDate();
+    const day = date.getDate();
 
     res.render("list", {listTitle : day, newListItem : items});
 
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 
 /* Using post request, we pass data back from our webpage to our server */
 app.post("/", (req, res) => {  /* Handles post requet to the home route */
-    var item = req.body.newItem;
+    const item = req.body.newItem;
     
     if(req.body.list === "Work") {
         workItems.push(item);
