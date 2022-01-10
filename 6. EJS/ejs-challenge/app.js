@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", function(req, res) {
-  res.render("home.ejs"); // res.render() is given by express
+  res.render("home"); // res.render() is given by express
 });
 
 
