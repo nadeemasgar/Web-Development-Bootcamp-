@@ -5,7 +5,9 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-var items = ["Buy Food", "Cook Food", "Eat Food"];
+let items = ["Buy Food", "Cook Food", "Eat Food"];
+
+let workItems = [];
 
 app.set("view engine", "ejs"); // To tell browser that we are using ejs
 
@@ -15,17 +17,17 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => {
 
-    var today = new Date();
+    let today = new Date();
 
-    var options = {
+    let options = {
         weekday : "long",
         day : "numeric", 
         month: "long"
     };
 
-    var day = today.toLocaleDateString("en-US", options);
+    let day = today.toLocaleDateString("en-US", options);
 
-    res.render("list", {kindOfDay : day, newListItem : items});
+    res.render("list", {listTitle : day, newListItem : items});
 
 });
 
@@ -34,6 +36,16 @@ app.post("/", (req, res) => {  /* Handles post requet to the home route */
     var item = req.body.newItem;
     items.push(item);
     res.redirect("/");
+});
+
+app.get("/work", function (req, res) {
+    res.render("list", {listTitle : "Work List", newListItem : workItems});
+});
+
+app.post("/work", function (req, res) {
+    let item = req.body.newItem;
+    workItems.push(item);
+    res.redirect("/work");
 })
 
 app.listen(3000, function () {
