@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+var item = "";
+
 app.set("view engine", "ejs"); // To tell browser that we are using ejs
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,7 +28,7 @@ app.get("/", (req, res) => {
 
 /* Using post request, we pass data back from our webpage to our server */
 app.post("/", (req, res) => {  /* Handles post requet to the home route */
-    var item = req.body.newItem;
+    item = req.body.newItem;
     
     res.redirect("/");
 })
