@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
     var currentDay = today.getDay();
     var day = "";
 
+    /* Basic Templating */
     const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday"];
     day = week[currentDay];
     console.log(currentDay, week, day);
