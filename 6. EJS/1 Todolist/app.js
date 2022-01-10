@@ -34,8 +34,15 @@ app.get("/", (req, res) => {
 /* Using post request, we pass data back from our webpage to our server */
 app.post("/", (req, res) => {  /* Handles post requet to the home route */
     var item = req.body.newItem;
-    items.push(item);
-    res.redirect("/");
+    
+    if(req.body.list === "Work") {
+        workItems.push(item);
+        res.redirect("/work");
+    }
+    else {
+        items.push(item);
+        res.redirect("/");
+    }
 });
 
 app.get("/work", function (req, res) {
