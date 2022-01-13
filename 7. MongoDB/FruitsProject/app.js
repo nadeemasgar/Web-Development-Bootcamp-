@@ -93,15 +93,25 @@ Fruit.find(function (err, fruits) {
 
 
 /* *** Updating the data */
-Fruit.updateOne({_id: "61e00e5740ff086b2e05bc07"}, {name: "Grapes"}, function(err) {
-    if(err) {
+// Fruit.updateOne({_id: "61e00e5740ff086b2e05bc07"}, {name: "Grapes"}, function(err) {
+//     if(err) {
+//         console.log(err);
+//     }
+//     else {
+//         console.log("Successfully updated the document.");
+//     }
+// });
+
+
+/*  *** Deleting the data */
+Fruit.deleteOne({name: "Grapes"}, function(err) {
+    if (err) {
         console.log(err);
     }
     else {
-        console.log("Successfully updated the document.");
+        console.log("Successfully deleted the document.");
     }
-});
-
+})
 
 
 
