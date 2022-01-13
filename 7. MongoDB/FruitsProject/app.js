@@ -1,82 +1,26 @@
-// jshint esversion:6
-// npm init -y ==> To make everything default
+// jshint esversion:6 
 
-/* *** Connection to MongoDB Server *** */
+const mongoose = require('mongoose');
 
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert'); /* Assert validate the data entry and our connection to the MongoDB database */
+// Connection URL -- database name is fruitsDB
+mongoose.connect("mongodb://localhost:27017/fruitsDB");
+/* mongoose.connect("mongodb://localhost:27017/fruitsDB", { useNewUrlParser: true } ); */
 
-// Connection URL 
-const url = 'mongodb://localhost:27017';
-
-// Database URL
-const dbName = 'fruitsDB';
-
-// Create a new MongoClient
-const client = new MongoClient(url);
-// const client = new MongoClient(url, { useNewUrlParser: true });
-
-// Use connect method to connect to the server
-client.connect(function (err) {
-    assert.equal(null, err);
-    console.log("Connected successfully to server");
-
-    const db = client.db(dbName);
-
-    /* insertDocuments(db, function() {
-        client.close();
-    }); */
-
-    findDocuments(db, function() {
-        client.close();
-    });
+// Defining the Schema (Structure of the data)
+const fruitSchema = new mongoose.Schema ( { 
+    name: String,
+    rating: Number,
+    review: String
 });
 
-/* *** Insert a Document into the MongoDB database *** */
+// Creating Mongoose Model - 1st parameter is the name of collection which should be singular form
+// then converted into plural form my mongoose
+const Fruit = mongoose.model("Fruit", fruitSchema);
 
-const insertDocuments = function(db, callback) {
-    // Get the documents collection
-    const collection = db.collection('fruits');
+const fruit = new Fruit ({
+    name: "Apple", 
+    rating: 7,
+    review: "Pretty solid as a fruit."
+});
 
-    // Insert some documents
-    collection.insertMany([
-
-        {
-            name : "Apple",
-            score : 8,
-            review : "Great fruit"
-        }, 
-        {
-            name : "Orange",
-            score : 6,
-            review : "Kinda sour"
-        },
-        {
-            name : "Banana",
-            score : 9,
-            review : "Great stuff!"
-        }
-
-    ], function(err, result) {  /* For validation if insertion happened successfully */
-        assert.equal(err, null);
-        // assert.equal(3, result.result.n);
-        // assert.equal(3, result.ops.length);
-        console.log("Inserted 3 documents into the collection");
-        callback(result);
-    } 
-    
-)};
-
-/* *** Query to Read All the documents ***  */
-
-const findDocuments = function (db, callback) {
-    // Get the documents collection
-    const collection = db.collection('fruits');
-    // Find some documents
-    collection.find({}).toArray(function (err, fruits) {
-        assert.equal(err, null);
-        console.log("Found the following records");
-        console.log(fruits);
-        callback(fruits);
-    });
-}
+// fruit.save();
