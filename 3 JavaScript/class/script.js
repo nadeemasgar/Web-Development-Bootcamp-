@@ -1,25 +1,12 @@
-// Class Declaration
-/* class Product {
+// Extending Class
+class Product {
     constructor(itemName, price, discount, productCode) {
         this.itemName = itemName;
         this.price = price;
         this.discount = discount;
         this.productCode = productCode;
     }
-}
 
-let pencil = new Product('Pencil', 20, 2, 'P10');
-
-console.log(Product); */
-
-// Class Expression
-const Product1 = class Product {
-    constructor(itemName, price, discount, productCode) {
-        this.itemName = itemName;
-        this.price = price;
-        this.discount = discount;
-        this.productCode = productCode;
-    }
     get getDiscountValue() {
         return this.discount;
     }
@@ -33,21 +20,18 @@ const Product1 = class Product {
     }
 };
 
-let chair = new Product1('Chair', 499, 15, 'C10');
+class Furniture extends Product {
+    constructor(itemName, price, discount, productCode, color) {
+        super(itemName, price, discount, productCode);
+        this.color = color;
+    }
 
-console.log(Product1);  // Product
+    getItemName() {
+        return this.itemName + " is a Furniture";
+    } 
+}
 
-/* *********************************************************** */
+let pencil = new Furniture('Pencil', 80, 10, 'FR', 'red');
 
-// const Product1 = class {
-//     constructor(itemName, price, discount, productCode) {
-//         this.itemName = itemName;
-//         this.price = price;
-//         this.discount = discount;
-//         this.productCode = productCode;
-//     }
-// };
-
-// let chair = new Product1('Chair', 499, 15, 'C10');
-
-// console.log(Product1); // Product1
+console.log(pencil.getItemName());
+console.log(pencil);
