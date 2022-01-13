@@ -17,12 +17,14 @@ const fruitSchema = new mongoose.Schema ( {
 // then converted into plural form my mongoose
 const Fruit = mongoose.model("Fruit", fruitSchema);
 
+// Data Object
 const fruit = new Fruit ({
     name: "Apple", 
     rating: 7,
     review: "Pretty solid as a fruit."
 });
 
+// To save the object
 // fruit.save();
 
 const personSchema = new mongoose.Schema ( {
@@ -57,7 +59,8 @@ const banana = new Fruit({
     review: "Weird texture"
 });
 
-Fruit.insertMany([kiwi, orange, banana], function (err) {
+/*  *** Insert Many Function *** */
+/* Fruit.insertMany([kiwi, orange, banana], function (err) {
     if(err) {
         console.log(err);
     }
@@ -65,8 +68,19 @@ Fruit.insertMany([kiwi, orange, banana], function (err) {
         console.log("Successfully saved all the fruits to fruitsDB");
     }
 });
+ */
 
-
+/*  *** To Read the data from MongoDB *** */
+Fruit.find(function (err, fruits) {
+    if(err) {
+        console.log(err);
+    }
+    else {
+        fruits.forEach(function(fruit) {
+            console.log(fruit.name);
+        })
+    }
+})
 
 
 
