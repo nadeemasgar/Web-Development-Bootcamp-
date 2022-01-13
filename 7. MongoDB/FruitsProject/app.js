@@ -31,7 +31,7 @@ const fruit = new Fruit ({
 });
 
 // To save the object
-fruit.save();
+// fruit.save();
 
 const personSchema = new mongoose.Schema ( {
     name: String,
@@ -89,7 +89,19 @@ Fruit.find(function (err, fruits) {
             console.log(fruit.name);
         })
     }
-})
+});
+
+
+/* *** Updating the data */
+Fruit.updateOne({_id: "61e00e5740ff086b2e05bc07"}, {name: "Grapes"}, function(err) {
+    if(err) {
+        console.log(err);
+    }
+    else {
+        console.log("Successfully updated the document.");
+    }
+});
+
 
 
 
