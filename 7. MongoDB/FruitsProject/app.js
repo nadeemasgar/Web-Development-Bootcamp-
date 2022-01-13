@@ -104,16 +104,24 @@ Fruit.find(function (err, fruits) {
 
 
 /*  *** Deleting the data */
-Fruit.deleteOne({name: "Grapes"}, function(err) {
-    if (err) {
+// Fruit.deleteOne({name: "Grapes"}, function(err) {
+//     if (err) {
+//         console.log(err);
+//     }
+//     else {
+//         console.log("Successfully deleted the document.");
+//     }
+// })
+
+
+Person.deleteMany({name: "John"}, function(err) {
+    if(err) {
         console.log(err);
     }
     else {
-        console.log("Successfully deleted the document.");
+        console.log("Successfully deleted all the document.");
     }
-})
-
-
+});
 
 
 
