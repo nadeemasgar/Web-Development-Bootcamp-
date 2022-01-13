@@ -8,8 +8,15 @@ mongoose.connect("mongodb://localhost:27017/fruitsDB");
 
 // Defining the Schema (Structure of the data)
 const fruitSchema = new mongoose.Schema ( { 
-    name: String,
-    rating: Number,
+    name: {
+        type: String,
+        required: [true, "Please check your data entry, no name specified!"]   /* validation is done here */
+    },
+    rating: {   
+        type: Number,  
+        min: 1,  /* validation is done here */
+        max: 10
+    },
     review: String
 });
 
@@ -19,13 +26,12 @@ const Fruit = mongoose.model("Fruit", fruitSchema);
 
 // Data Object
 const fruit = new Fruit ({
-    name: "Apple", 
-    rating: 7,
-    review: "Pretty solid as a fruit."
+    rating: 10,
+    review: "Tasty"
 });
 
 // To save the object
-// fruit.save();
+fruit.save();
 
 const personSchema = new mongoose.Schema ( {
     name: String,
@@ -41,7 +47,7 @@ const person = new Person({
 
 // person.save();
 
-const kiwi = new Fruit({
+/* const kiwi = new Fruit({
     name: "Kiwi", 
     score: 10,
     review: "The best fruit!"
@@ -57,7 +63,7 @@ const banana = new Fruit({
     name: "Banana", 
     score: 3, 
     review: "Weird texture"
-});
+}); */
 
 /*  *** Insert Many Function *** */
 /* Fruit.insertMany([kiwi, orange, banana], function (err) {
@@ -77,7 +83,7 @@ Fruit.find(function (err, fruits) {
     }
     else {
 
-        mongoose.connection.close(); // To close the connection
+        /* mongoose.connection.close(); // To close the connection */
 
         fruits.forEach(function(fruit) {
             console.log(fruit.name);
