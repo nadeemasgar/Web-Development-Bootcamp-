@@ -76,6 +76,9 @@ Fruit.find(function (err, fruits) {
         console.log(err);
     }
     else {
+
+        mongoose.connection.close(); // To close the connection
+
         fruits.forEach(function(fruit) {
             console.log(fruit.name);
         })
