@@ -2,7 +2,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongose = require("mongose");
+const mongoose = require("mongoose");
 const e = require("express");
 
 const app = express();
@@ -36,16 +36,25 @@ const item3 = new Item({
 
 const defaultItems = [item1, item2, item3];
 
-Item.insertMany(defaultItems, function (err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("All items added successfully");
-  }
-});
-
 app.get("/", function (req, res) {
-  res.render("list", { listTitle: "Today", newListItems: items });
+  Item.find({}, function (err, foundItems) {
+    
+    if(foundItems.length === 0 ) {
+      Item.insertMany(defaultItems, function (err) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(" Suuccessfully saved default items to DB.");
+        }
+      });
+      res.redirect("/");
+    }
+    else {
+      res.render("list", { listTitle: "Today", newListItems: foundItems });
+    }
+
+  })
+
 });
 
 app.post("/", function (req, res) {
