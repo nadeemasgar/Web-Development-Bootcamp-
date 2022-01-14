@@ -60,7 +60,7 @@ app.get("/", function (req, res) {
 app.post("/", function (req, res) {
   const itemName = req.body.newItem;
 
-  const item = new Item({
+    const item = new Item({
      name: itemName
   })
 
@@ -69,6 +69,21 @@ app.post("/", function (req, res) {
   res.redirect("/");
   
 });
+
+app.post("/delete", function (req, res) {
+  const checkedItemID = req.body.checkbox;
+  console.log(checkedItemID);
+
+  Item.findOneAndDelete(checkedItemID , function(err){
+    if(err) {
+      console.log( err);
+    } 
+    else {
+      console.log("Deleted successfully");
+      res.redirect("/");
+    }
+  });
+})
 
 app.get("/work", function (req, res) {
   res.render("list", { listTitle: "Work List", newListItems: workItems });
