@@ -1,0 +1,24 @@
+<!-- Array Destructuring  -->
+
+<script>
+
+     const programming = ['js', 'php', 'c', 'python', 'java'];
+
+    //ES5 language
+ /* var top1 = programming[0];
+    var top2 = programming[1];
+    var top3 = programming[2];
+
+    console.log("My favorite programming lang is " + top1);
+ */
+
+    // ES6 language
+    let [top1, top2, top3] = programming;
+    console.log("My favorite programming lang is " + top1);
+
+    console.log(programming.length);
+
+    let [first,,,,last] = programming;
+    console.log(first, last);
+
+</script>
