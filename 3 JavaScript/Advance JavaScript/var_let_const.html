@@ -1,0 +1,52 @@
+<!-- Let, Var, Const -->
+
+<script>
+
+    // var has Function Scope
+    /* function modJS(love) { 
+        if(love) {
+            var name = "Nadeem";  
+            var sname = "Asgar";
+        }
+        console.log(`My Name is ${name} ${sname}`);    // My Name is Nadeem Asgar
+    }
+
+    modJS(true); */
+
+    // let and const has block scope
+    /* function modJS(love) {  
+        if(love) {
+            let name = "Nadeem";  
+            let sname = "Asgar";
+        }
+        console.log(`My Name is ${name} ${sname}`);  // Uncaught ReferenceError: name and sname is not defined at modJS (var_let_const.html:22:43)
+    at 
+    }
+
+    modJS(true); */
+
+    /* ************************************ */
+
+    /* var matchWin = "India";
+
+    if(true) {
+        var matchWin = "South Africa";
+        console.log(matchWin);  // South Africa
+    }
+
+    console.log(matchWin); // South Africa */
+
+    
+
+    
+    /* let matchWin = "India";
+
+    if(true) {
+        let matchWin = "South Africa";
+        console.log(matchWin);  // South Africa
+    }
+
+    console.log(matchWin); // India */
+
+
+</script>
