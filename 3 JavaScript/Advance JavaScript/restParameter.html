@@ -1,0 +1,20 @@
+<!-- Rest Parameter -->
+
+<script>
+
+    // ES5 language
+    /* function sum(a, b, c, d, e, f) {
+        console.log(a+b+c+d+e+f);
+    }
+
+    sum(1,2,3,4,5,6) */
+
+    //ES6 language
+    function sum(...inputs) {
+        console.log(inputs); // [1, 2, 3, 4, 5, 6]
+        console.log(...inputs); // 1 2 3 4 5 6
+    }
+
+    sum(1,2,3,4,5,6)
+
+</script>
