@@ -90,7 +90,7 @@ app.get("/:customListName", function(req, res) {
 })
 
 
-app.post("/", function (req, res) {
+/* app.post("/", function (req, res) {
   const itemName = req.body.newItem;
 
     const item = new Item({
@@ -100,6 +100,35 @@ app.post("/", function (req, res) {
   item.save();
 
   res.redirect("/");
+  
+}); */
+
+app.post("/", function (req, res) {
+  const itemName = req.body.newItem;
+  const listName = req.body.list;
+  console.log(listName, typeof(listName));
+  const xyz = "Today";
+
+  const item = new Item({
+     name: itemName
+  });
+
+  if(listName.localeCompare("Today" == 0)) {
+    item.save();
+    res.redirect("/");
+  }
+  else {
+    List.findOne({name : listName}, function(err, foundList) {
+     
+      // if(!err) {
+        foundList.items.push(item);
+        foundList.save();
+        console.log("Bye",foundList);
+        res.redirect("/", listName);
+      // }
+     
+    })
+  }
   
 });
 
