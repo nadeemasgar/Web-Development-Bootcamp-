@@ -1,0 +1,36 @@
+<!-- Default Parameter -->
+
+<script>
+
+    // ES5 language
+
+    // multiply of two no
+    /* function mult(a, b) {
+        console.log(a*b);   // NaN
+    }
+
+    mult(4);  */
+
+    /* function mult(a, b) {
+        b = (typeof b !== 'undefined') ? b : 1;
+        console.log(a*b);
+    }
+
+    mult(4); */
+
+    //ES6 language
+    /* function mult(a, b=4) {
+        console.log(a*b);
+    }
+
+    mult(4); */
+
+    const mult = (a, b=4) => {
+        console.log(`The multiplication of two numbers ${a*b}`);
+    }
+
+    mult(5);
+
+
+
+</script>
