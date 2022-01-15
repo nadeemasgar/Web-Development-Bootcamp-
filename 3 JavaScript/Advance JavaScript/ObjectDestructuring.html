@@ -1,0 +1,23 @@
+<!-- Object Destructuring -->
+
+<script>
+
+    const bioData = {
+        name : "Vinod",
+        age : 26,
+        deg : "Mtech"
+    }
+
+    // console.log(`My name is ${bioData.name}`);
+
+    // ES6 language
+    /* let {name, age, deg} = bioData;
+
+    console.log(`My name is ${name}. My age is ${age}. My deg is ${deg}`); */
+
+
+    /* Renaming while Destructuring the object */
+    let {name : myname, age : ages, deg} = bioData;
+    console.log(`My name is ${myname}. My age is ${ages}. My deg is ${deg}`);
+
+</script>
