@@ -1,0 +1,68 @@
+<!-- Closure -->
+
+<script>
+
+    // Also example of Lexical Scoping & Closure Both
+/*     const outerFun = (a) => {
+        let b = 10;
+        const innerFun = () => {
+            let sum = a + b;
+            console.log(`The sum of two no. is ${sum}. `);
+        }
+        innerFun();
+    }
+
+    outerFun(5); */
+
+
+    // Example of Closure
+    /* const outerFun = (a) => {
+        let b = 10;
+        const innerFun = () => {
+            let sum = a + b;
+            console.log(`The sum of two no. is ${sum}. `);
+        }
+
+        return innerFun;
+    }
+
+    let inner = outerFun(5);
+
+    console.dir(inner);
+
+    inner(); */
+
+
+
+    const interviewQuestions = (name) => {
+        return function (topic) {
+            if(name === "vinod") {
+                console.log(`Hi, ${name}. Plz explain what is ${topic}. `);
+            }
+            else if(name === "thapa") {
+                console.log(`Hi, ${name}. Plz explain what is ${topic}. `);
+            }
+            else if(name === "thapatechnical") {
+                console.log(`Hi, ${name}. Plz explain what is ${topic}. `);
+            }
+            else {
+                console.log("Welcome to TT company");
+            }
+        }
+    }
+
+
+    // const candidate1 = interviewQuestions("vinod");
+    // candidate1('UI');
+    // candidate1('Developer');
+
+    // const candidate2 = interviewQuestions("thapa");
+    // candidate2('reactjs');
+
+    interviewQuestions("vinod")("UI");
+    interviewQuestions("thapa")("reactjs");
+    interviewQuestions("thapatechnical")("nodejs");
+
+    
+
+</script>
