@@ -1,0 +1,105 @@
+<!-- This Keyword -->
+
+<script>
+
+   /* 
+    // Global Object in javaScript is window 
+    console.log(this); // Window
+ */
+
+/* 
+ // Regular Function
+ function sum() {
+     var add = 2+2;
+     console.log("Sum of two number is " + add);
+     console.log(this);  // Window
+ }
+
+ sum();
+ */
+
+/*  // Method Function
+ const obj = {
+     name : "Nadeem Asgar",
+     qualify : "Btech",
+     sum : function() {
+         var add = 2+2;
+         console.log("Sum of two number is " + add);
+         console.log(this.name);
+        console.log(this);   // {name: 'Nadeem Asgar', qualify: 'Btech', sum: ƒ}
+     }
+ }
+
+ obj.sum(); */
+
+
+ /* // Arrow Functions
+ let fun = () => {
+    var add = 2+2;
+     console.log("Sum of two number is " + add);
+     console.log(this); // Window
+ }
+
+ fun(); */
+
+
+/* // Arrow Function inside Object
+ const obj = {
+     name : "Nadeem Asgar",
+     qualify : "Btech",
+     sum : () => {
+        var add = 10+2;
+        console.log("Sum of two number is " + add);
+        console.log(this); // Window
+    }
+ }
+
+ obj.sum(); */
+
+
+ // Always Regular Function will point to window object
+ // Always Method Function will point to owner object
+
+ /* const obj = {
+     name : "Md Nadeem Asgar",
+     qualify : "Btech",
+     sum : function () {
+         var add = 2+2;
+         console.log("Sum of two number is " + add);
+         console.log(this); // {name: 'Md Nadeem Asgar', qualify: 'Btech', sum: ƒ}
+
+         function child() {
+             var name = "Abdur";
+             console.log("Child Method name is " + name); 
+             console.log(this); // window
+         }
+
+         child();
+     }
+ }
+
+ obj.sum(); */
+
+
+ /* const obj = {
+     name : "Md Nadeem Asgar",
+     qualify : "Btech",
+     sum : function () {
+         var add = 2+2;
+         console.log("Sum of two number is " + add);
+         console.log(this); // {name: 'Md Nadeem Asgar', qualify: 'Btech', sum: ƒ}
+
+         let child = () => {
+             var name = "Abhishek";
+             console.log("Child Method name is " + name); 
+             console.log(this); // {name: 'Md Nadeem Asgar', qualify: 'Btech', sum: ƒ}
+         }
+
+         child();
+     }
+ }
+
+ obj.sum(); */
+
+
+</script>
