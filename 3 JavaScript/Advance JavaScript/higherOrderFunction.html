@@ -1,0 +1,40 @@
+<!-- Higher Order Function -->
+
+<script>
+
+    const interviewQuestions = (name) => {
+
+        if(name === "vinod") {
+            return function(topic) {
+                console.log(`Hii ${name}. What is ${topic}?. Plz explain us.`);
+            }
+        }
+
+        if(name === "thapa") {
+            return function(topic) {
+                console.log(`Hii ${name}. What is ${topic}?. Plz explain us.`);
+            }
+        }
+
+        if(name === "thapatechnical") {
+            return function(topic) {
+                console.log(`Hii ${name}. What is ${topic}?. Plz explain us.`);
+            }
+        }
+        else {
+            return function() {
+                console.log("Welcome to Interview");
+            }
+        }
+    }
+
+    // interviewQuestions("vinod")("UI");
+    // interviewQuestions("thapa")("Full Stack Development");
+    // interviewQuestions("thapatechnical")("Front End Development");
+
+    const cand1 = interviewQuestions("vinod");
+    cand1("UI");
+    cand1("UX");
+    cand1("javaScript");
+
+</script>
