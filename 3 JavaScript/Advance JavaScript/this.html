@@ -96,5 +96,47 @@
 
  obj.sum(); */
 
+
+/*  const obj = {
+     name : "Md Nadeem Asgar",
+     qualify : "Btech",
+     sum : () => {
+         var add = 2+2;
+         console.log("Sum of two number is " + add);
+         console.log(this); // window
+
+         let child = () => {
+             var name = "Abhishek";
+             console.log("Child Method name is " + name); 
+             console.log(this); // window
+         }
+
+         child();
+     }
+ }
+
+ obj.sum(); */
+
+
+/* const obj = {
+     name : "Md Nadeem Asgar",
+     qualify : "Btech",
+     sum : () => {
+         var add = 2+2;
+         console.log("Sum of two number is " + add);
+         console.log(this); // window
+
+         function child() {
+             var name = "Abhishek";
+             console.log("Child Method name is " + name); 
+             console.log(this); // window
+         }
+
+         child();
+     }
+ }
+
+ obj.sum(); */
+
   // this point to the ctext from which that function or variable is defined and ca be access through..
   // Like window.age or this. age where age is a variable
