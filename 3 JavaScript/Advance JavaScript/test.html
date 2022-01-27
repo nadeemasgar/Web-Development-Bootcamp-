@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      let add = {
+        num: 0,
+        calc: function () {
+          // logs the add object
+          console.log(this + " ");
+
+          // using thisreference variable to
+          // store the value of this
+          thisreference = this;
+
+          function innerfunc() {
+            // using the variable to access the
+            // context of the outer function
+            thisreference.num += 1;
+
+            // logs the add object
+            console.log(thisreference + " m,nm ");
+            return thisreference.num;
+          }
+          return innerfunc();
+        },
+      };
+
+      // logs 1
+      console.log(add.calc() + "<br>");
+
+      // logs 2
+      console.log(add.calc(), "jkhm");
+    </script>
+  </body>
+</html>
