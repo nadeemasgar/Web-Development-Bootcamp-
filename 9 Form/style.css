@@ -66,6 +66,8 @@
   text-align: right;
 }
 
+
+/* CSS Validation for Number */
 /*  For chrome, Safari, Edge, Opera  */
 
 input::-webkit-outer-spin-button,
